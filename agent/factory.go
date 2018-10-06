@@ -12,7 +12,7 @@ import (
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
 	boshsys "github.com/cloudfoundry/bosh-utils/system"
 
-	"github.com/cppforlife/turbulence/tasks/monit"
+	"github.com/bosh-turbulence/turbulence/tasks/monit"
 )
 
 type Factory struct {
@@ -111,5 +111,5 @@ func (f Factory) httpClient() (Client, error) {
 
 	httpClient := boshhttp.NewHTTPClient(&http.Client{Transport: httpTransport}, f.logger)
 
-	return NewClient(endpoint.String(), httpClient, f.logger), nil
+	return NewClient(endpoint.String(), *httpClient, f.logger), nil
 }

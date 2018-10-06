@@ -6,10 +6,10 @@ import (
 
 	bosherr "github.com/cloudfoundry/bosh-utils/errors"
 
-	"github.com/cppforlife/turbulence/director"
-	"github.com/cppforlife/turbulence/incident/reporter"
-	"github.com/cppforlife/turbulence/incident/selector"
-	tubtasks "github.com/cppforlife/turbulence/tasks"
+	"github.com/bosh-turbulence/turbulence/director"
+	"github.com/bosh-turbulence/turbulence/incident/reporter"
+	"github.com/bosh-turbulence/turbulence/incident/selector"
+	tubtasks "github.com/bosh-turbulence/turbulence/tasks"
 )
 
 func (i Incident) Execute() error {

@@ -6,10 +6,10 @@ import (
 
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
 
-	"github.com/cppforlife/turbulence/director"
-	"github.com/cppforlife/turbulence/incident/reporter"
-	"github.com/cppforlife/turbulence/incident/selector"
-	"github.com/cppforlife/turbulence/tasks"
+	"github.com/bosh-turbulence/turbulence/director"
+	"github.com/bosh-turbulence/turbulence/incident/reporter"
+	"github.com/bosh-turbulence/turbulence/incident/selector"
+	"github.com/bosh-turbulence/turbulence/tasks"
 )
 
 type Incident struct {

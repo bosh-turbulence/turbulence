@@ -8,9 +8,9 @@ import (
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
 	boshuuid "github.com/cloudfoundry/bosh-utils/uuid"
 
-	"github.com/cppforlife/turbulence/director"
-	"github.com/cppforlife/turbulence/incident/reporter"
-	"github.com/cppforlife/turbulence/tasks"
+	"github.com/bosh-turbulence/turbulence/director"
+	"github.com/bosh-turbulence/turbulence/incident/reporter"
+	"github.com/bosh-turbulence/turbulence/tasks"
 )
 
 type IncidentNotFoundError struct {

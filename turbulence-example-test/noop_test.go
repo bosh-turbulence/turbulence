@@ -6,11 +6,11 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
+	tubclient "github.com/bosh-turbulence/turbulence/client"
+	tubinc "github.com/bosh-turbulence/turbulence/incident"
+	tubsel "github.com/bosh-turbulence/turbulence/incident/selector"
+	tubtasks "github.com/bosh-turbulence/turbulence/tasks"
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
-	tubclient "github.com/cppforlife/turbulence/client"
-	tubinc "github.com/cppforlife/turbulence/incident"
-	tubsel "github.com/cppforlife/turbulence/incident/selector"
-	tubtasks "github.com/cppforlife/turbulence/tasks"
 )
 
 var _ = Describe("Noop", func() {

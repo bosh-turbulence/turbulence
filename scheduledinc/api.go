@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/cppforlife/turbulence/incident"
+	"github.com/bosh-turbulence/turbulence/incident"
 )
 
 type Request struct {

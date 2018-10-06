@@ -8,7 +8,7 @@ import (
 	mart "github.com/go-martini/martini"
 	martrend "github.com/martini-contrib/render"
 
-	"github.com/cppforlife/turbulence/tasks"
+	"github.com/bosh-turbulence/turbulence/tasks"
 )
 
 type TasksController struct {

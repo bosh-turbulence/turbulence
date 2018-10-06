@@ -15,7 +15,7 @@ type ClientRequest struct {
 	endpoint     string
 	client       string
 	clientSecret string
-	httpClient   boshhttp.HTTPClient
+	httpClient   *boshhttp.HTTPClient
 	logger       boshlog.Logger
 }
 
@@ -23,7 +23,7 @@ func NewClientRequest(
 	endpoint string,
 	client string,
 	clientSecret string,
-	httpClient boshhttp.HTTPClient,
+	httpClient *boshhttp.HTTPClient,
 	logger boshlog.Logger,
 ) ClientRequest {
 	return ClientRequest{

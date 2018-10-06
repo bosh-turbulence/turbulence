@@ -3,7 +3,7 @@ package client
 import (
 	bosherr "github.com/cloudfoundry/bosh-utils/errors"
 
-	"github.com/cppforlife/turbulence/incident"
+	"github.com/bosh-turbulence/turbulence/incident"
 )
 
 type TurbulenceImpl struct {

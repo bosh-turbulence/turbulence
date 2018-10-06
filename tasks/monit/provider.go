@@ -6,7 +6,7 @@ import (
 	"time"
 
 	bosherr "github.com/cloudfoundry/bosh-utils/errors"
-	boshhttp "github.com/cloudfoundry/bosh-utils/http"
+	boshhttp "github.com/cloudfoundry/bosh-utils/httpclient"
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
 	boshsys "github.com/cloudfoundry/bosh-utils/system"
 )

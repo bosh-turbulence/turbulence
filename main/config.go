@@ -7,8 +7,7 @@ import (
 	bosherr "github.com/cloudfoundry/bosh-utils/errors"
 	boshsys "github.com/cloudfoundry/bosh-utils/system"
 
-	"github.com/cppforlife/turbulence/director"
-	"github.com/cppforlife/turbulence/incident/reporter"
+	"github.com/bosh-turbulence/turbulence/director"
 )
 
 type Config struct {
@@ -22,8 +21,6 @@ type Config struct {
 	PrivateKeyPath  string
 
 	Director director.Config
-
-	Datadog reporter.DatadogConfig
 }
 
 func NewConfigFromPath(path string, fs boshsys.FileSystem) (Config, error) {
@@ -79,11 +76,6 @@ func (c Config) Validate() error {
 	err := c.Director.Validate()
 	if err != nil {
 		return bosherr.WrapError(err, "Validating 'Director' config")
-	}
-
-	err = c.Datadog.Validate()
-	if err != nil {
-		return bosherr.WrapError(err, "Validating 'Datadog' config")
 	}
 
 	return nil

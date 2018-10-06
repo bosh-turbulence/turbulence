@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cppforlife/turbulence/incident/reporter"
-	"github.com/cppforlife/turbulence/incident/selector"
-	"github.com/cppforlife/turbulence/tasks"
+	"github.com/bosh-turbulence/turbulence/incident/reporter"
+	"github.com/bosh-turbulence/turbulence/incident/selector"
+	"github.com/bosh-turbulence/turbulence/tasks"
 )
 
 type Request struct {

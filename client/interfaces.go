@@ -3,8 +3,8 @@ package client
 import (
 	"time"
 
-	"github.com/cppforlife/turbulence/incident"
-	"github.com/cppforlife/turbulence/tasks"
+	"github.com/bosh-turbulence/turbulence/incident"
+	"github.com/bosh-turbulence/turbulence/tasks"
 )
 
 // Turbulence client is designed to be test friendly

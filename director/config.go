@@ -35,8 +35,8 @@ func (c Config) Validate() error {
 	return nil
 }
 
-func (c Config) AnonymousUserConfig() boshdir.Config {
-	return boshdir.Config{
+func (c Config) AnonymousUserConfig() boshdir.FactoryConfig {
+	return boshdir.FactoryConfig{
 		Host: c.Host,
 		Port: c.Port,
 
@@ -44,8 +44,8 @@ func (c Config) AnonymousUserConfig() boshdir.Config {
 	}
 }
 
-func (c Config) UserConfig() boshdir.Config {
-	return boshdir.Config{
+func (c Config) UserConfig() boshdir.FactoryConfig {
+	return boshdir.FactoryConfig{
 		Host: c.Host,
 		Port: c.Port,
 

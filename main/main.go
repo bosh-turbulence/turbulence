@@ -15,11 +15,11 @@ import (
 	martauth "github.com/martini-contrib/auth"
 	martrend "github.com/martini-contrib/render"
 
-	ctrls "github.com/cppforlife/turbulence/controllers"
-	"github.com/cppforlife/turbulence/director"
-	"github.com/cppforlife/turbulence/incident"
-	"github.com/cppforlife/turbulence/incident/reporter"
-	"github.com/cppforlife/turbulence/scheduledinc"
+	ctrls "github.com/bosh-turbulence/turbulence/controllers"
+	"github.com/bosh-turbulence/turbulence/director"
+	"github.com/bosh-turbulence/turbulence/incident"
+	"github.com/bosh-turbulence/turbulence/incident/reporter"
+	"github.com/bosh-turbulence/turbulence/scheduledinc"
 )
 
 const mainLogTag = "main"
@@ -40,15 +40,7 @@ func main() {
 	config, err := NewConfigFromPath(*configPathOpt, fs)
 	ensureNoErr(logger, "Loading config", err)
 
-	var rep reporter.Reporter
-
-	{
-		if config.Datadog.Required() {
-			rep = reporter.NewDatadog(config.Datadog, logger)
-		} else {
-			rep = reporter.NewLogger(logger)
-		}
-	}
+	rep := reporter.NewLogger(logger)
 
 	var dir director.Director
 
@@ -83,7 +75,7 @@ func basicDeps(debug bool) (boshlog.Logger, boshsys.FileSystem, boshuuid.Generat
 		logLevel = boshlog.LevelDebug
 	}
 
-	logger := boshlog.NewWriterLogger(logLevel, os.Stderr, os.Stderr)
+	logger := boshlog.NewWriterLogger(logLevel, os.Stderr)
 	fs := boshsys.NewOsFileSystem(logger)
 	uuidGen := boshuuid.NewGenerator()
 	return logger, fs, uuidGen
