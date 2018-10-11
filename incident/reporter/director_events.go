@@ -6,7 +6,7 @@ import (
 
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
 
-	"github.com/cppforlife/turbulence/director"
+	"github.com/bosh-turbulence/turbulence/director"
 )
 
 type DirectorEvents struct {
