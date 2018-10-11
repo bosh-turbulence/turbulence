@@ -38,19 +38,17 @@ func (r Datadog) ReportIncidentExecutionStart(i Incident) {
 	}
 
 	event := &datadog.Event{
-		Title: r.incidentTitle("Started", i),
-		Text:  text,
-		Time:  int(i.ExecutionStartedAt().Unix()),
+		Title: datadog.String(r.incidentTitle("Started", i)),
+		Text:  datadog.String(text),
+		Time:  datadog.Int(int(i.ExecutionStartedAt().Unix())),
 
-		Priority:  "normal",
-		AlertType: "info",
+		Priority:  datadog.String("normal"),
+		AlertType: datadog.String("info"),
 
-		Host:        "turbulence-api",
-		Aggregation: "",
-		SourceType:  "turbulence-api",
+		Host:       datadog.String("turbulence-api"),
+		SourceType: datadog.String("turbulence-api"),
 
-		Tags:     []string{"incident:" + i.ID()},
-		Resource: "",
+		Tags: []string{"incident:" + i.ID()},
 	}
 
 	event, err = r.client.PostEvent(event)
@@ -72,19 +70,17 @@ func (r Datadog) ReportIncidentExecutionCompletion(i Incident) {
 	}
 
 	event := &datadog.Event{
-		Title: r.incidentTitle("Completed", i),
-		Text:  text,
-		Time:  int(i.ExecutionCompletedAt().Unix()),
+		Title: datadog.String(r.incidentTitle("Completed", i)),
+		Text:  datadog.String(text),
+		Time:  datadog.Int(int(i.ExecutionCompletedAt().Unix())),
 
-		Priority:  "normal",
-		AlertType: alertType,
+		Priority:  datadog.String("normal"),
+		AlertType: datadog.String(alertType),
 
-		Host:        "turbulence-api",
-		Aggregation: "",
-		SourceType:  "turbulence-api",
+		Host:       datadog.String("turbulence-api"),
+		SourceType: datadog.String("turbulence-api"),
 
-		Tags:     []string{"incident:" + i.ID()},
-		Resource: "",
+		Tags: []string{"incident:" + i.ID()},
 	}
 
 	event, err := r.client.PostEvent(event)
@@ -101,19 +97,16 @@ func (r Datadog) ReportEventExecutionStart(incidentID string, e Event) {
 	}
 
 	event := &datadog.Event{
-		Title: r.eventTitle("Started", e),
-		Text:  "",
-		Time:  int(e.ExecutionStartedAt.Unix()),
+		Title: datadog.String(r.eventTitle("Started", e)),
+		Time:  datadog.Int(int(e.ExecutionStartedAt.Unix())),
 
-		Priority:  "normal",
-		AlertType: "info",
+		Priority:  datadog.String("normal"),
+		AlertType: datadog.String("info"),
 
-		Host:        "turbulence-api",
-		Aggregation: "",
-		SourceType:  "turbulence-api",
+		Host:       datadog.String("turbulence-api"),
+		SourceType: datadog.String("turbulence-api"),
 
-		Tags:     r.eventTags(incidentID, e),
-		Resource: "",
+		Tags: r.eventTags(incidentID, e),
 	}
 
 	event, err := r.client.PostEvent(event)
@@ -138,19 +131,17 @@ func (r Datadog) ReportEventExecutionCompletion(incidentID string, e Event) {
 	}
 
 	event := &datadog.Event{
-		Title: r.eventTitle("Completed", e),
-		Text:  text,
-		Time:  int(e.ExecutionCompletedAt.Unix()),
+		Title: datadog.String(r.eventTitle("Completed", e)),
+		Text:  datadog.String(text),
+		Time:  datadog.Int(int(e.ExecutionCompletedAt.Unix())),
 
-		Priority:  "normal",
-		AlertType: alertType,
+		Priority:  datadog.String("normal"),
+		AlertType: datadog.String(alertType),
 
-		Host:        "turbulence-api",
-		Aggregation: "",
-		SourceType:  "turbulence-api",
+		Host:       datadog.String("turbulence-api"),
+		SourceType: datadog.String("turbulence-api"),
 
-		Tags:     r.eventTags(incidentID, e),
-		Resource: "",
+		Tags: r.eventTags(incidentID, e),
 	}
 
 	event, err := r.client.PostEvent(event)
