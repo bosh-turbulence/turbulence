@@ -80,7 +80,7 @@ func basicDeps(debug bool) (boshlog.Logger, boshsys.FileSystem, boshuuid.Generat
 		logLevel = boshlog.LevelDebug
 	}
 
-	logger := boshlog.NewWriterLogger(logLevel, os.Stderr, os.Stderr)
+	logger := boshlog.NewWriterLogger(logLevel, os.Stderr)
 	fs := boshsys.NewOsFileSystem(logger)
 	uuidGen := boshuuid.NewGenerator()
 	return logger, fs, uuidGen
