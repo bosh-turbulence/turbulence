@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	bosherr "github.com/cloudfoundry/bosh-utils/errors"
-	boshhttp "github.com/cloudfoundry/bosh-utils/httpclient"
+	boshhttp "github.com/cloudfoundry/bosh-utils/http"
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
 )
 
