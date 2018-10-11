@@ -12,7 +12,7 @@ go fmt github.com/bosh-turbulence/turbulence-example-test/...
 
 echo
 echo "Testing packages..."
-$bin/ginkgo -r $bin/..
+$bin/ginkgo -keepGoing -r $bin/..
 
 echo
 echo "Running build script to confirm api server compiles..."
