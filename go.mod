@@ -1,5 +1,7 @@
 module github.com/bosh-turbulence/turbulence
 
+replace github.com/cloudfoundry/bosh-cli => github.com/carlo-colombo/bosh-cli v5.4.1-0.20190121161634-505b0e2872d8+incompatible
+
 require (
 	code.cloudfoundry.org/clock v0.0.0-20180518195852-02e53af36e6c // indirect
 	github.com/bmatcuk/doublestar v1.1.1 // indirect

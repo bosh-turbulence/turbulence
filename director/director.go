@@ -39,13 +39,14 @@ func (d DirectorImpl) AllInstances() ([]Instance, error) {
 }
 
 func (d DirectorImpl) SubmitEvent(opts EventOpts) error {
-	return d.director.SubmitEvent(boshdir.EventOpts{
-		Action:     opts.Action,
-		ObjectType: opts.ObjectType,
-		ObjectName: opts.ObjectName,
-		Deployment: opts.Deployment,
-		Instance:   opts.Instance,
-		Context:    opts.Context,
-		Error:      opts.Error,
-	})
+	return nil
+	// return d.director.SubmitEvent(boshdir.EventOpts{
+	// 	Action:     opts.Action,
+	// 	ObjectType: opts.ObjectType,
+	// 	ObjectName: opts.ObjectName,
+	// 	Deployment: opts.Deployment,
+	// 	Instance:   opts.Instance,
+	// 	Context:    opts.Context,
+	// 	Error:      opts.Error,
+	// })
 }
